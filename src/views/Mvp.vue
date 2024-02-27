@@ -5,12 +5,12 @@
           <el-menu >
             <el-sub-menu index="1">
               <template #title>
-                MTN
+                MOMO
               </template>
             </el-sub-menu>
             <el-sub-menu index="2">
               <template #title>
-                MEMO
+                MTN
               </template>
             </el-sub-menu>
             <el-sub-menu index="3">
@@ -56,16 +56,28 @@
             <el-row >
             <el-col :xs="12" :sm="12" :md="12" :lg="12" style="padding-left: 400px; padding-top:70px;" >
                 <span style="font-size: medium;">Powered By</span> <el-button  type="info">Rem Cash</el-button>
+                <img src="../assets/logo.png" alt="" style="width:80%; height: 100px;" />
             </el-col>
             <el-col :xs="12" :sm="12" :md="12" :lg="12">
                 <el-card class="box-card">
                     <template #header>
                     <div class="card-header">
-                        <span>Merchent name</span>
+                        <span><h3>Merchent name</h3></span>
                     </div>
                     </template>
                     <div  class="text item">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+                            No. 6, Sixth Street
+                            <br>
+
+                            Airport Residential Area
+                            <br>
+                            Accra
+                            <br>
+                           Ghana 
+
+                            <br>
+                              0302763158
+
 
                     </div>
                 </el-card>

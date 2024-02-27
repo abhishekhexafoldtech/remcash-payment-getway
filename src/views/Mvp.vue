@@ -2,16 +2,14 @@
     <el-container class="layout-container-demo" style="height: 500px">
       <el-aside width="200px">
         <el-scrollbar>
-          <el-menu >
+          <el-menu :default-openeds="['1']">
             <el-sub-menu index="1">
               <template #title>
                 MOMO
               </template>
-            </el-sub-menu>
-            <el-sub-menu index="2">
-              <template #title>
-                MTN
-              </template>
+              <el-menu-item-group>
+              <el-menu-item index="1-1">MTN</el-menu-item>
+            </el-menu-item-group>
             </el-sub-menu>
             <el-sub-menu index="3">
               <template #title>

@@ -28,11 +28,11 @@
           <el-menu default-active="2">
             <el-menu-item index="1">
               <el-icon><i class="ri-cash-line"></i></el-icon>
-              <span>MTN</span>
+              <span>MOMO</span>
             </el-menu-item>
             <el-menu-item index="2">
               <el-icon><i class="ri-cash-line"></i></el-icon>
-              <span>MOMO</span>
+              <span> MTN</span>
             </el-menu-item>
             <el-menu-item index="3">
               <el-icon><i class="ri-bank-card-2-fill"></i></el-icon>

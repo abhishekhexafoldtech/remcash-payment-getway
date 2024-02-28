@@ -30,10 +30,10 @@
               <el-icon><i class="ri-cash-line"></i></el-icon>
               <span>MOMO</span>
             </el-menu-item>
-            <el-menu-item index="2">
+            <!-- <el-menu-item index="2">
               <el-icon><i class="ri-cash-line"></i></el-icon>
               <span> MTN</span>
-            </el-menu-item>
+            </el-menu-item> -->
             <el-menu-item index="3">
               <el-icon><i class="ri-bank-card-2-fill"></i></el-icon>
               <span>Credit Card</span>
@@ -67,13 +67,17 @@
               <div class="custom_radio">
                 <el-radio-group v-model="radio1">
                   <el-radio label="1" border>
+                    <img src="../assets/mtn.png" alt="">
+                    <!-- <b>MTN</b> -->
+                  </el-radio>
+                  <!-- <el-radio label="2" border>
                     <img src="../assets/airtel.png" alt="">
                     <b>Airtel</b>
                   </el-radio>
-                  <el-radio label="2" border>
+                  <el-radio label="3" border>
                     <img src="../assets/vodafone.png" alt="">
                     <b>Vodafone</b>
-                  </el-radio>
+                  </el-radio> -->
                 </el-radio-group>
               </div>
             </el-col>

@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Noto Sans", sans-serif;
+}
+
+:root {
+    --body-color: #303030;
+    --black: #000;
+    --blue: #2F77DE;
+    --bg-light-blue: #e7f2fb;
+    --white: #fff;
+    --menu-hover: #ECF2FC;
+
+}
+
+.main_wrapper {
+    min-height: 100vh;
+    background-color: var(--bg-light-blue);
+}
+
+.el-header.main_header {
+    --el-header-padding: 0 25px;
+    --el-header-height: 65px;
+    box-shadow: 0px 0px 20px rgb(151 151 151 / 30%);
+    background-color: var(--white);
+    position: relative;
+    z-index: 1;
+
+    .header_inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 65px;
+
+        .back_btn {
+            .el-button {
+                width: 30px;
+                height: 30px;
+                border: solid 1px #e6e6e6;
+                border-radius: 5px;
+                background-color: transparent;
+                color: var(--body-color);
+                font-size: 19px;
+                padding: 0;
+                line-height: 29px;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 10px;
+                transition: all 200ms ease-in-out;
+            }
+
+            label {
+                font-size: 15px;
+                font-weight: normal;
+                color: var(--body-color);
+                vertical-align: middle;
+                transition: all 200ms ease-in-out;
+            }
+
+            &:hover {
+                .el-button {
+                    background-color: var(--menu-hover);
+                    color: var(--blue);
+                    border-color: var(--blue);
+                }
+
+                label {
+                    color: var(--blue);
+                }
+            }
+        }
+
+        .el-dropdown {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: var(--body-color);
+            cursor: pointer;
+            transition: all 200ms ease-in-out;
+
+            &:hover {
+                color: var(--blue);
+            }
+        }
+    }
+}
+
+.el-aside.side_menu {
+    width: 250px;
+    background-color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+
+    h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--body-color);
+        margin: 0;
+        margin-bottom: 5px;
+    }
+
+    .powered_by {
+        width: 100%;
+        max-width: 180px;
+        margin: 0 auto;
+
+        p {
+            font-size: 13px;
+            font-weight: normal;
+            color: var(--body-color);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+
+    .el-scrollbar {
+        height: calc(100vh - 210px);
+    }
+
+    .el-menu {
+        border-right: none;
+
+        .el-sub-menu {
+            box-shadow: 0px 5px 5px rgb(0 0 0 / 5%);
+            margin-bottom: 10px;
+        }
+
+        .el-menu-item {
+            height: 50px;
+            box-shadow: 0px 5px 5px rgb(0 0 0 / 5%);
+            margin: 5px 0;
+
+            .el-icon {
+                font-size: 20px;
+                margin-right: 10px;
+            }
+
+            span {
+                font-size: 15px;
+                font-weight: normal;
+            }
+
+            &:hover,
+            &.is-active {
+                background-color: var(--el-menu-hover-bg-color);
+                color: var(--blue);
+            }
+        }
+
+        .el-menu-item-group__title {
+            padding: 0;
+        }
+    }
+}
+
+.el-main.main_content {
+    padding: 0;
+
+    .intro_text {
+        background-color: var(--white);
+        padding: 50px;
+
+        h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin: 0;
+            margin-bottom: 12px;
+            color: var(--body-color);
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: normal;
+            color: var(--body-color);
+            margin: 0;
+
+            b {
+                font-weight: 700;
+            }
+        }
+    }
+
+    .pay_form {
+        width: 100%;
+        max-width: 635px;
+        margin: 0 auto;
+        padding: 25px 15px;
+        padding-top: 50px;
+
+
+
+        .custom_radio {
+            margin-bottom: 30px;
+
+            .el-radio-group {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+                gap: 125px;
+
+                .el-radio {
+                    margin: 0;
+                    width: 100%;
+                    padding: 20px;
+                    padding-bottom: 12px;
+                    height: auto;
+                    background-color: var(--white);
+                    border: solid 2px var(--white);
+                    border-radius: 10px;
+                    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.03);
+
+                    &.is-checked {
+                        border-color: var(--blue);
+                        background-color: transparent;
+                    }
+
+                    .el-radio__inner {
+                        width: 35px;
+                        height: 35px;
+                        border-color: #B0C2D1;
+
+                        &::after {
+                            width: 17px;
+                            height: 17px;
+                            background-color: var(--blue);
+                        }
+                    }
+
+                    .el-radio__label {
+                        padding-left: 40px;
+                        width: calc(100% - 45px);
+                        text-align: center;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                            object-position: center;
+                            display: block;
+                        }
+
+                        b {
+                            font-size: 15px;
+                            font-weight: 500;
+                            margin-top: 5px;
+                            display: block;
+                        }
+                    }
+
+                    .el-radio__input.is-checked+.el-radio__label {
+                        color: var(--blue);
+                    }
+
+                    .el-radio__input.is-checked .el-radio__inner {
+                        background-color: var(--white);
+                        border-color: var(--blue);
+                    }
+                }
+            }
+        }
+
+        .input_form {
+            &.el-form-item {
+                margin-bottom: 25px;
+
+                .el-form-item__label {
+                    font-size: 15px;
+                    color: var(--body-color);
+                    margin: 0;
+                    margin-bottom: 8px;
+                    padding: 0;
+                }
+            }
+
+            .el-input__wrapper {
+                padding: 12px 20px;
+                box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.03);
+                border-radius: 10px;
+                transition: all 200ms ease-in-out;
+
+                .el-input__inner {
+                    font-size: 17px;
+                    font-weight: 600;
+                    color: var(--body-color);
+                }
+
+                &.is-focus {
+                    box-shadow: 0px 3px 15px rgb(178 214 243);
+                }
+            }
+        }
+
+        .form_action {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 1000%;
+            max-width: 300px;
+            margin: 0 auto;
+            margin-top: 30px;
+
+            .el-button {
+                margin: 0;
+                background-color: transparent;
+                border: solid 1px var(--black);
+                color: var(--body-color);
+                height: auto;
+                padding: 18px;
+                padding-top: 16px;
+                border-radius: 10px;
+                letter-spacing: 0px;
+                position: relative;
+                overflow: hidden;
+
+                span {
+                    font-size: 18px;
+                    font-weight: 600;
+                    position: relative;
+                }
+
+                &:hover {
+                    border-color: var(--blue);
+                    color: var(--blue);
+                }
+
+                &.pay_btn {
+                    background-color: var(--body-color);
+                    border-color: var(--body-color);
+                    color: var(--white);
+
+                    &::before {
+                        content: "";
+                        width: 100%;
+                        height: 0;
+                        background-color: var(--black);
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        opacity: 0;
+                        transition: all 400ms ease-in-out;
+                    }
+
+                    &:hover {
+                        &::before {
+                            opacity: 1;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

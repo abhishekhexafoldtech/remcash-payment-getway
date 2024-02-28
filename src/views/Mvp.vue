@@ -1,132 +1,123 @@
 <template>
-    <el-container class="layout-container-demo" style="height: 500px">
-      <el-aside width="200px">
-        <el-scrollbar>
-          <el-menu :default-openeds="['1']">
-            <el-sub-menu index="1">
-              <template #title>
-                MOMO
-              </template>
-              <el-menu-item-group>
-              <el-menu-item index="1-1">MTN</el-menu-item>
-            </el-menu-item-group>
-            </el-sub-menu>
-            <el-sub-menu index="3">
-              <template #title>
-                Credit card
-              </template>
-            </el-sub-menu>
-            <el-sub-menu index="4">
-              <template #title>
-                Debit card
-              </template>
-            </el-sub-menu>
-            <el-sub-menu index="5">
-              <template #title>
-                Net Banking
-              </template>
-            </el-sub-menu>
+  <el-container class="main_wrapper">
+    <el-header class="main_header">
+      <div class="header_inner">
+        <div class="back_btn">
+          <el-button><i class="ri-arrow-left-s-line"></i></el-button>
+          <label>Back</label>
+        </div>
+        <el-dropdown>
+          <el-icon>
+            <i class="ri-menu-line"></i>
+          </el-icon>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item>View</el-dropdown-item>
+              <el-dropdown-item>Add</el-dropdown-item>
+              <el-dropdown-item>Delete</el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
+      </div>
+    </el-header>
 
+    <el-container>
+      <el-aside class="side_menu">
+        <h3>How would you like to pay</h3>
+        <el-scrollbar>
+          <el-menu default-active="2">
+            <el-menu-item index="1">
+              <el-icon><i class="ri-cash-line"></i></el-icon>
+              <span>MTN</span>
+            </el-menu-item>
+            <el-menu-item index="2">
+              <el-icon><i class="ri-cash-line"></i></el-icon>
+              <span>MOMO</span>
+            </el-menu-item>
+            <el-menu-item index="3">
+              <el-icon><i class="ri-bank-card-2-fill"></i></el-icon>
+              <span>Credit Card</span>
+            </el-menu-item>
+            <el-menu-item index="4">
+              <el-icon><i class="ri-bank-card-2-fill"></i></el-icon>
+              <span>Debit Card</span>
+            </el-menu-item>
+            <el-menu-item index="4">
+              <el-icon><i class="ri-bank-line"></i></el-icon>
+              <span>Internet Banking</span>
+            </el-menu-item>
           </el-menu>
         </el-scrollbar>
+        <div class="powered_by">
+          <p>Powered By</p>
+          <img src="../assets/remcash_logo.svg" alt="" />
+        </div>
       </el-aside>
-  
-      <el-container>
-        <el-header style="text-align: right; font-size: 12px">
-          <div class="toolbar">
-            <el-dropdown>
-                <el-icon style="margin-right: 8px; margin-top: 1px">
-                    <setting/>
-                </el-icon>
-              <template #dropdown>
-                <el-dropdown-menu>
-                  <el-dropdown-item>View</el-dropdown-item>
-                  <el-dropdown-item>Add</el-dropdown-item>
-                  <el-dropdown-item>Delete</el-dropdown-item>
-                </el-dropdown-menu>
-              </template>
-            </el-dropdown>
-                
+
+      <el-main class="main_content">
+        <div class="intro_text">
+          <h2>Enter Your MOMO Details</h2>
+          <p>You are paying <b>GHs500</b> to <b>Nova Gas Company</b> limited in ghana's northern zone.</p>
+        </div>
+
+
+        <el-form :model="form" label-position="top" class="pay_form">
+          <el-row :gutter="30">
+            <el-col :xs="24" :sm="24" :md="24" :lg="24">
+              <div class="custom_radio">
+                <el-radio-group v-model="radio1">
+                  <el-radio label="1" border>
+                    <img src="../assets/airtel.png" alt="">
+                    <b>Airtel</b>
+                  </el-radio>
+                  <el-radio label="2" border>
+                    <img src="../assets/vodafone.png" alt="">
+                    <b>Vodafone</b>
+                  </el-radio>
+                </el-radio-group>
+              </div>
+            </el-col>
+
+            <el-col :xs="24" :sm="24" :md="12" :lg="12">
+              <el-form-item class="input_form" label="First Name">
+                <el-input v-model="form.name" />
+              </el-form-item>
+            </el-col>
+
+            <el-col :xs="24" :sm="24" :md="12" :lg="12">
+              <el-form-item class="input_form" label="Last Name">
+                <el-input v-model="form.name" />
+              </el-form-item>
+            </el-col>
+
+            <el-col :xs="24" :sm="24" :md="24" :lg="24">
+              <el-form-item class="input_form" label="Enter your MOMO phone number to pay">
+                <el-input placeholder="Eg: 078546xxxxxx" v-model="form.name" />
+              </el-form-item>
+            </el-col>
+          </el-row>
+          <div class="form_action">
+            <el-button class="pay_btn" @click="onSubmit">Pay GHs500</el-button>
+            <el-button>Cancel</el-button>
           </div>
-        </el-header>
-  
-        <el-main>
-            <el-row >
-            <el-col :xs="12" :sm="12" :md="12" :lg="12" style="padding-left: 400px; padding-top:70px;" >
-                <span style="font-size: medium;">Powered By</span> <el-button  type="info">Rem Cash</el-button>
-                <img src="../assets/logo.png" alt="" style="width:80%; height: 100px;" />
-            </el-col>
-            <el-col :xs="12" :sm="12" :md="12" :lg="12">
-                <el-card class="box-card">
-                    <template #header>
-                    <div class="card-header">
-                        <span><h3>Merchent name</h3></span>
-                    </div>
-                    </template>
-                    <div  class="text item">
-                            No. 6, Sixth Street
-                            <br>
-
-                            Airport Residential Area
-                            <br>
-                            Accra
-                            <br>
-                           Ghana 
-
-                            <br>
-                              0302763158
-
-
-                    </div>
-                </el-card>
-            </el-col>
-
-
-            <el-col :xs="12" :sm="12" :md="12" :lg="12">
-                <el-form :model="form" label-position="top" style="padding:30px;">
-                    <el-row :gutter="10">
-                        <el-col :xs="12" :sm="12" :md="12" :lg="12">
-                            <el-form-item label="First name">
-                                <el-input v-model="form.name" />
-                            </el-form-item>
-                        </el-col>
-                        <el-col :xs="12" :sm="12" :md="12" :lg="12">
-                            <el-form-item label="Last name">
-                                <el-input v-model="form.name" />
-                            </el-form-item>
-                        </el-col>
-
-                        <el-col :xs="12" :sm="12" :md="12" :lg="12">
-                            <el-form-item label="Enter your MTN phone number to pay">
-                                <el-input placeholder="Eg: 078546xxxxxx" v-model="form.name" />
-                            </el-form-item>
-                        </el-col>
-                        <el-col :xs="12" :sm="12" :md="12" :lg="12" style="padding:30px;">
-                            <el-button type="primary" @click="onSubmit">Pay Ghn500</el-button>
-                        </el-col>
-                    </el-row>
-                </el-form>
-            </el-col>
-            <el-col :xs="12" :sm="12" :md="12" :lg="12">
-                &nbsp;
-            </el-col>
-            </el-row>
-        </el-main>
-      </el-container>
+        </el-form>
+      </el-main>
     </el-container>
+  </el-container>
 </template>
   
 <script lang="ts" setup>
-  import { ref, reactive } from 'vue'
+import { ref, reactive } from 'vue'
 
-  import { Menu as IconMenu, Message, Setting } from '@element-plus/icons-vue'
-  
-  const item = {
-    date: '2016-05-02',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  }
-  const tableData = ref(Array.from({ length: 20 }).fill(item))
+import { Menu as IconMenu, Message, Setting } from '@element-plus/icons-vue'
+
+const item = {
+  date: '2016-05-02',
+  name: 'Tom',
+  address: 'No. 189, Grove St, Los Angeles',
+}
+const tableData = ref(Array.from({ length: 20 }).fill(item))
+const radio1 = ref('1')
 
 
 // do not use same name with ref
@@ -148,29 +139,5 @@ const onSubmit = () => {
 
 </script>
   
-<style scoped>
-
-  .layout-container-demo .el-header {
-    position: relative;
-    background-color: var(--el-color-primary-light-7);
-    color: var(--el-text-color-primary);
-  }
-  .layout-container-demo .el-aside {
-    color: var(--el-text-color-primary);
-    background: var(--el-color-primary-light-8);
-  }
-  .layout-container-demo .el-menu {
-    border-right: none;
-  }
-  .layout-container-demo .el-main {
-    padding: 0;
-  }
-  .layout-container-demo .toolbar {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    right: 20px;
-  }
-</style>
+<style scoped></style>
   
